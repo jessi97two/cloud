@@ -17,7 +17,7 @@ Les formulaires de toutes les vues générées enverront leurs données vers la 
 	// qui contient les balises de structure de la page, le logo, etc. 
 	// Le formulaire de recherche ainsi que le lien de connexion 
 	// si l'utilisateur n'est pas connecté 
-	include("templates/creation.php");
+	include("templates/login.php");
 
 	// on récupère le paramètre view éventuel  
 	/*$view = valider("view"); 

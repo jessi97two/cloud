@@ -178,7 +178,22 @@ body
 
 #creerdossier
         {
-            display: none;
+            margin-left:10px;
             border: 1px solid black;
             position: absolute;
+            text-align: center;
         }
+
+#boutoncreerdossier
+{
+    text-align: center;
+    padding: 2px;
+}
+
+#creer
+{
+    text-align: center;
+    padding: 2px;
+    margin-left:140px;
+    margin-top:2px;
+}

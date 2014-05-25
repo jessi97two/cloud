@@ -20,7 +20,7 @@ include_once "maLibUtils.php";	// Car on utilise la fonction valider()
  */
 function verifUser($login,$password)
 {
-	$SQL = "SELECT * FROM users WHERE pseudo = '$login' and passe = '$password'";
+	$SQL = "SELECT * FROM users WHERE username = '$login' and password = '$password'";
 
 	//$tabAsso = parcoursRs(SQLSelect($SQL));
 	//$id = $tabAsso[0]['id']

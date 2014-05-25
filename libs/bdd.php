@@ -37,10 +37,10 @@ function ajouterFichier($user_id,$folder_id,$name,$tag,$commentaire,$version,$da
 	sqlinsert($sql);
 }
 
-function ajouterDossier($user_id,$name,$date)
+function ajouterDossier($user_id,$name)
 {
-	$sql = "INSERT INTO (user_id, name, 'date')";
-	$sql .= "VALUES ('$user_id','$name','$date')";
+	$sql = "INSERT INTO folders (user_id, name)";
+	$sql .= "VALUES ('$user_id','$name')";
 	sqlinsert($sql);
 }
 

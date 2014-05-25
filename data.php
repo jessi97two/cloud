@@ -17,11 +17,15 @@ session_start();
 
 			case 'Connexion' :
 				// On verifie la presence des champs login et passe
-				if ($login = valider("login"))
-				if ($passe = valider("passe"))
+				if ($login = valider('login'))
+				if ($password = valider('passe'))
 				{
 					// On verifie l'utilisateur, et on crée des variables de session si tout est OK
-					verifUser($login,$passe); 
+					if(verifUser($login,$password))
+					{
+						header("Location:templates/accueil.php");
+						die(""); //interrompte l'execution du code
+					} 
 						
 				}
 
@@ -51,6 +55,16 @@ session_start();
 				else 
 					echo ' erreur';
 
+			break;
+
+			case 'Creer un dossier' :
+				if($dossier = valider("nomdossier")) 
+				{
+					$id=$_SESSION['id'];
+					ajouterDossier($id,$dossier);
+					header("Location:templates/accueil.php");
+					die();
+				}
 			break;
 
 	
