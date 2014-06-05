@@ -1,9 +1,23 @@
 body
 {
-	olor: #555555;
+	/*color: #555555;*/
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 13px;
     line-height: 1.42857;
+    background-color: #74bfe0;
+}
+
+#banniere {
+    
+    
+    margin-bottom: 80px; 
+}
+
+#banniere img
+{
+ height : 1%;
+ width: 100%;
+ 
 }
 
 #formLogin
@@ -196,4 +210,35 @@ body
     padding: 2px;
     margin-left:140px;
     margin-top:2px;
+}
+
+#listagedossier
+{
+    border: 1px solid black;
+    line-height:35px;
+}
+
+span
+{
+        display: inline-block;
+        margin-right: 150px;
+        vertical-align: center;
+
+}
+
+#listagedossier div
+{
+    display:block;
+    padding-left: 20px;
+}
+
+#formupload
+{
+    display:inline-block;
+    margin-left: 200px;
+}
+
+#formcreationdossier
+{
+    display:inline-block;
 }

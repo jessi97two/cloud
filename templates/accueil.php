@@ -6,6 +6,37 @@ include_once "../libs/maLibForms.php";
 include_once "../libs/maLibUtils.php";
 include_once "../libs/bdd.php";
 
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- **** H E A D **** -->
+<head>	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<!-- **** F I N **** H E A D **** -->
+
+
+<!-- **** B O D Y **** -->
+<body>
+
+<div id="banniere">
+
+<!--Bannière : définie dans le template header.php -->
+
+<div id="logo">
+<img src="../images/image11.png" />
+</div>
+
+
+</div>
+</body>
+</html>
+
+<?php
 //include_once("../libs/maLibSecurisation.php");
 	//securiser("libs/login.php");
 
@@ -13,8 +44,8 @@ $pseudo = valider("login","SESSION");
 $pseudo=$_SESSION['pseudo'];
 	echo "<h1> Bienvenue $pseudo </h1>"; 
 	//echo '<h2>Bienvenue </h2>' ;
-$id=$_SESSION['id'];
-echo $id ; 
+//$id=$_SESSION['id'];
+//echo $id ; 
 ?>
 
 <!DOCTYPE html>
@@ -70,10 +101,18 @@ echo $id ;
 				<input type="submit" name="action" id="creer" value="Creer un dossier" /> 
 			</form>
 		</div>
+		<div id="formupload">
+			<form action="../data.php">
+				<input type="submit" name="action" value="Upload fichier" />
+			</form>
+		</div>
 	</body>
 </html>
 
 <?php
+?>
+<div id="listagedossier">
+	<?php
 
 	$id=$_SESSION['id'];
 	$dossier=listerDossier($id);
@@ -84,9 +123,13 @@ echo $id ;
 	// Si on change de section, on affiche son nom
 	if ($currentSection != $data["name"])
 		{
-		echo "<p>$data[name]</p>";
+		echo "<div><span>$data[name]</span>";
+		echo "<span>$data[datecreation]</span></div>";
 		$currentSection = $data["name"];
 		}	 
 	
 	}
+	?>
+</div>
+<?php
 ?>

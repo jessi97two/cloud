@@ -67,6 +67,23 @@ session_start();
 				}
 			break;
 
+			case 'Upload fichier' :
+					header("Location:templates/upload.php");
+					die();
+			break;
+
+			case 'Upload' :
+			echo ' ici';
+					//if($fichier = valider("dropper"))
+					//{
+						$fichier = valider("dropper");
+						$id=$_SESSION['id'];
+						ajouterFichier($id,$fichier);
+						header("Location:templates/accueil.php");
+						die();
+					//}
+			break;
+
 	
 		}
 	}

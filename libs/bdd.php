@@ -18,7 +18,14 @@ function listerFichier($user_id,$folder_id)
 
 function listerDossier($user_id)
 {
-	$sql = "SELECT name FROM folders WHERE user_id=$user_id";
+	$sql = "SELECT name , datecreation FROM folders WHERE user_id=$user_id";
+	$res = sqlselect($sql);
+	return parcoursRs($res);
+}
+
+function recupererMail()
+{
+	$sql = "SELECT email FROM users";
 	$res = sqlselect($sql);
 	return parcoursRs($res);
 }
@@ -30,12 +37,19 @@ function ajouterUtilisateur($username,$passe,$surname,$name,$email)
 	sqlinsert($sql);
 }
 
-function ajouterFichier($user_id,$folder_id,$name,$tag,$commentaire,$version,$date)
+function ajouterFichier($user_id,$name)
+{
+	$sql = "INSERT INTO (user_id, name)";
+	$sql .= "VALUES ('$user_id','$name')";
+	sqlinsert($sql);
+}
+
+/*function ajouterFichier($user_id,$folder_id,$name,$tag,$commentaire,$version,$date)
 {
 	$sql = "INSERT INTO (user_id, folder_id, name, tag, commentaire, version, 'date')";
 	$sql .= "VALUES ('$user_id','$folder_id','$name','$tag','$commentaire','$version','$date')";
 	sqlinsert($sql);
-}
+}*/
 
 function ajouterDossier($user_id,$name)
 {
